@@ -1,8 +1,6 @@
 pipeline(){
     agent any
-
- 
-
+    
     tools{
         gradle 'Gradle8.1'
     }
@@ -10,9 +8,6 @@ pipeline(){
         stage('Clone repository'){
             steps{
                 git 'https://github.com/juanse962/WebScreenplay.git'
-
- 
-
             }
         }
    stage('SonarQube analysis'){
