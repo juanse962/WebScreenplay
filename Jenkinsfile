@@ -1,6 +1,8 @@
 pipeline(){
     agent any
-    
+
+ 
+
     tools{
         gradle 'Gradle8.1'
     }
@@ -8,6 +10,9 @@ pipeline(){
         stage('Clone repository'){
             steps{
                 git 'https://github.com/juanse962/WebScreenplay.git'
+
+ 
+
             }
         }
    stage('SonarQube analysis'){
@@ -38,5 +43,12 @@ pipeline(){
                     ])
                 }
         } 
-    }           
+    }
+        post{
+        always{
+            mail to: "your_email@gmail.com",
+            subject: "Test Email",
+            body: "Test"
+        }
+    }
 }
