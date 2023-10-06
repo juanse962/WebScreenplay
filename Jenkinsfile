@@ -39,8 +39,8 @@ pipeline() {
     }
   }
   post {
-    always {
-      mail to: "juansegomez40@gmail.com", //configure mail in Glogal system and add your email
+    always { // security second verification and add app password copy paste configure mail in Glogal system and add your email
+      mail to: "juansegomez40@gmail.com", 
         subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
         body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
     }
