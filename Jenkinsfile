@@ -40,7 +40,7 @@ pipeline() {
   }
   post {
     always {
-      mail to: "juansegomez40@gmail.com",
+      mail to: "juansegomez40@gmail.com", //configure mail in Glogal system and add your email
         subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
         body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
     }
