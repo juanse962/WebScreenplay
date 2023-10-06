@@ -6,7 +6,7 @@ pipeline() {
   stages {
     stage('Clone repository') {
       steps {
-        git 'https://github.com/juanse962/WebScreenplay.git'
+        git branch: 'main', credentialsId: 'juanse962', url: 'https://github.com/juanse962/WebScreenplay'          
       }
     }
     stage('SonarQube analysis') {
@@ -40,9 +40,10 @@ pipeline() {
   }
   post {
     always {
-      mail to: "<your_email>@gmail.com",
+      mail to: "juansegomez40@gmail.com",
         subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
         body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
     }
   }
+
 }
