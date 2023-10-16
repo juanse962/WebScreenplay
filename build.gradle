@@ -11,6 +11,7 @@ apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
+
 def versionSerenity='3.7.1'
 def versionApachePoi='5.2.2'
 def versionApacheCXF='3.4.4'
